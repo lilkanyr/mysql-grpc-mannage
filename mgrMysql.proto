@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package db_operations;
+
+
+message UserInfo {
+    string name = 1;
+    int32 age = 2;
+}
+
+message DBRequest {
+    enum OperationType {
+        UNKNOWN = 0;
+        INSERT = 1;
+        UPDATE = 2;
+        DELETE = 3;
+    }
+    
+    OperationType operation = 1;  
+    UserInfo user_info = 2;      
+}
+
+message DBResponse {
+    bool success = 1;
+    string message = 2;
+}
+
+service DBService {
+    rpc ExecuteOperation(DBRequest) returns (DBResponse) {}
+}
