@@ -1,0 +1,35 @@
+name: Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y cmake build-essential libmysqlcppconn-dev libgrpc++-dev libprotobuf-dev protobuf-compiler-grpc
+
+    - name: Configure CMake
+      run: |
+        mkdir -p build
+        cd build
+        cmake ..
+
+    - name: Build
+      run: |
+        cd build
+        make -j$(nproc)
+
+    - name: Create config file
+      run: |
+        cd build
+        echo -e "[mysql]\nhost=localhost\nport=3306\nuser=root\npassword=test\ndatabase=test" > config.ini
