@@ -1,5 +1,8 @@
 # MySQL 数据库管理系统
 
+[![构建状态](https://github.com/lilkanyr/mysql-grpc-mannage/workflows/Build/badge.svg)](https://github.com/lilkanyr/mysql-grpc-mannage/actions)
+[![许可证](https://img.shields.io/github/license/lilkanyr/mysql-grpc-mannage)](https://github.com/lilkanyr/mysql-grpc-mannage/blob/main/LICENSE)
+
 这是一个基于 gRPC 和 MySQL Connector/C++ 的数据库管理系统，提供了高性能的数据库连接池和事务管理功能。
 
 ## 项目特点
