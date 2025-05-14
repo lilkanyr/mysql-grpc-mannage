@@ -1,11 +1,20 @@
-# MySQL 数据库管理系统
+# MySQL-gRPC 数据库管理系统
 
 [![构建状态](https://github.com/lilkanyr/mysql-grpc-mannage/workflows/Build/badge.svg)](https://github.com/lilkanyr/mysql-grpc-mannage/actions)
 [![许可证](https://img.shields.io/github/license/lilkanyr/mysql-grpc-mannage)](https://github.com/lilkanyr/mysql-grpc-mannage/blob/main/LICENSE)
 
-这是一个基于 gRPC 和 MySQL Connector/C++ 的数据库管理系统，提供了高性能的数据库连接池和事务管理功能。
+> 一个基于 gRPC 和 MySQL 的简单数据库管理工具，实现了连接池、事务管理等功能。
 
-## 项目特点
+## 👀 预览
+
+```bash
+$ ./grpc_client
+=== 数据库操作菜单 ===
+1. 插入用户信息
+2. 更新用户信息
+3. 删除用户信息
+0. 退出程序
+请输入您的选择: 
 
 - 基于 gRPC 的客户端-服务器架构
 - 高效的 MySQL 连接池管理
@@ -96,22 +105,19 @@ database=test     # 数据库名称
 ### 构建步骤
 
 ```bash
-# 创建构建目录
-mkdir build
-cd build
+# 快速开始
+git clone https://github.com/lilkanyr/mysql-grpc-mannage.git
+cd mysql-grpc-mannage
+mkdir build && cd build
+cmake .. && make
 
-# 配置项目
-cmake ..
+# 配置数据库
+cp ../config.ini.example config.ini
+vim config.ini  # 修改数据库配置
 
-# 编译
-make
-```
-
-### 运行服务
-
-1. 启动服务器：
-```bash
-./grpc_server
+# 启动服务
+./grpc_server  # 新开一个终端
+./grpc_client  # 在另一个终端运行
 ```
 
 2. 运行客户端：
@@ -134,17 +140,26 @@ make
 | 查询超时 | 查询执行超时 | 自动重试或报错 |
 | 保活失败 | 连接保活检查失败 | 尝试重新建立连接 |
 
-## 开发团队
+## 🤝 贡献
 
-- 数据库管理模块开发
-- gRPC 服务实现
-- 客户端应用开发
-- 测试和质量保证
+欢迎提交 issue 和 PR，一起改进这个项目！
 
-## 更新日志
+## 📝 TODO
+
+- [ ] 添加单元测试
+- [ ] 实现连接池动态扩容
+- [ ] 添加更多数据库操作功能
+- [ ] 优化错误处理机制
+- [ ] 实现异步查询支持
+
+## 📜 开源协议
+
+本项目使用 [MIT](LICENSE) 协议开源。
+
+## 🔄 更新日志
 
 ### 2025-05-14
-- 优化连接保活机制
-- 增加事务支持
-- 改进错误处理
-- 添加详细日志记录
+- ✨ 实现基础的数据库操作功能
+- 🔧 添加连接池管理
+- 🐛 修复连接保活问题
+- 📝 完善项目文档

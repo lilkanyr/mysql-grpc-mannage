@@ -1,0 +1,10 @@
+[grpc]
+host=localhost
+port=50051
+
+[mysql]
+host=localhost
+port=3306
+user=lilykanye
+password=******
+database=test
