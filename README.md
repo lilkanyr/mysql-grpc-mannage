@@ -1,8 +1,5 @@
 # MySQL-gRPC 数据库管理系统
 
-[![构建状态](https://github.com/lilkanyr/mysql-grpc-mannage/workflows/Build/badge.svg)](https://github.com/lilkanyr/mysql-grpc-mannage/actions)
-[![许可证](https://img.shields.io/github/license/lilkanyr/mysql-grpc-mannage)](https://github.com/lilkanyr/mysql-grpc-mannage/blob/main/LICENSE)
-
 > 一个基于 gRPC 和 MySQL 的简单数据库管理工具，实现了连接池、事务管理等功能。
 
 ## 👀 预览
@@ -140,10 +137,6 @@ vim config.ini  # 修改数据库配置
 | 查询超时 | 查询执行超时 | 自动重试或报错 |
 | 保活失败 | 连接保活检查失败 | 尝试重新建立连接 |
 
-## 🤝 贡献
-
-欢迎提交 issue 和 PR，一起改进这个项目！
-
 ## 📝 TODO
 
 - [ ] 添加单元测试
@@ -151,15 +144,3 @@ vim config.ini  # 修改数据库配置
 - [ ] 添加更多数据库操作功能
 - [ ] 优化错误处理机制
 - [ ] 实现异步查询支持
-
-## 📜 开源协议
-
-本项目使用 [MIT](LICENSE) 协议开源。
-
-## 🔄 更新日志
-
-### 2025-05-14
-- ✨ 实现基础的数据库操作功能
-- 🔧 添加连接池管理
-- 🐛 修复连接保活问题
-- 📝 完善项目文档
